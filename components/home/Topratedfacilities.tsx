@@ -32,7 +32,7 @@ export default async function TopRatedFacilities(){
                 </p>
             ): (
                 <div className="mt-4 grid gap-4 sm:grid-cols-2 md:gap-5 lg:grid-cols-4">
-                    {facilities.map((f, i ) =>(
+                    {facilities.slice(0,4).map((f, i ) =>(
                         <div key={f.id || i} className={i>=2? "hidden sm:block": ""}>
                         <FacilityCard facility={f} />
                         

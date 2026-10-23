@@ -1,10 +1,11 @@
-// import Link from "next/Link";
-import Navbar from "../components/layout/Navbar";
-import SearchBar from "../components/layout/SearchBar"
 import Hero from "@/components/home/hero";
-import Footer from "@/components/layout/Footer"
+import SearchBar from "@/components/layout/SearchBar"
 import CategoryGrid from "@/components/home/categorygrid";
-import FacilityCard from "@/components/home/facilitycard";
+import TopRatedFacilities from "@/components/home/Topratedfacilities";
+import HowItWorks from "@/components/home/howitworks"; 
+import NearbyFacilities from "@/components/home/nearbyfacilities";
+import CommunityCTA from "@/components/home/communitycta";
+
 
 
 
@@ -13,13 +14,14 @@ export default function HomePage(){
     <main className="min-h-screen bg-gray-50">
      
     <Hero />
+    <SearchBar />
     <CategoryGrid />
-    {/* <FacilityCard /> */}
+    <TopRatedFacilities />
+    <NearbyFacilities />
+    <HowItWorks />
+    <CommunityCTA />
+   
 
-    <Footer />
-    {/* <section className="bg-blue-950 px-5 py-20 text-white  sm:py-28">
-
-    </section> */}
     </main>
   )
 }

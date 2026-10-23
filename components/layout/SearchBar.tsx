@@ -27,40 +27,41 @@ export default function SearchBar() {
 
     return(
         <form onSubmit={handleSearch}
-        className="grid gap-3 rounded-2xl bg-white p-3 shadow-lg sm:grid-cols-[1ftr_1ftr_auto]
+        className="grid gap-2 rounded-2xl bg-white p-3 shadow-lg md:grid-cols-[136fr_1fr_1fr_auto]
         md:items-center md:gap-0 md:rounded-full md:py-2 md:pl-6 md:pr-2"
         >
             <label className={field}>
             <Search size={18} className="shrink-0 text-slate-500" aria-hidden />
         <span className="sr-only">Search for a hospital, clinic, pharmacy or specialist</span>
         <input value={query}
-        onChange={(event) =>
-        setQuery(event.target.value)
+        onChange={(e) =>
+        setQuery(e.target.value)
         } 
         placeholder="Search for a hospial, clinic, pharmacy, specialist..."
-        className="w-full bg-transparent  text-sm text-gray-900 outline-none" />
+        className="w-full bg-transparent  text-sm text-slate-900 outline-none placholder:text-slate-500" />
         </label>
 
         <div className="grid grid-cols-2 gap-2 md:contents">
-            <label className="{`${field} md:border-1 md:border-slate-200 md:px-4`}">
-            <MapPin size={16} className="shrink-0 text-slate-500" aria-hidden />
+            <label className={`${field} md:border-1 md:border-slate-200 md:px-4`}>
+            <MapPin size={16} className="shrink-0 text-slate-500" aria-hidden aria-placeholder=""/>
             <span className="sr-only">Location</span>
             <input list="location-options"
              value={location}
              onChange={(e)=> setLocation(e.target.value)}
              placeholder="County or town in Liberia"
-             className="w-full bg-transparent pr-4 text-sm text-slate-700 outline-none placholder:text-slate-500" 
+             className="w-full bg-transparent pr-4 text-sm text-slate-700 outline-none 
+             placholder:text-slate-500" 
              />
              <datalist id="location-options">
                 <option value="Near me" />
-                {counties.map((c)=> (
+                {[...new Set(counties)].map((c)=> (
                     <option value={c} key={c} />
 
                 ))}
              </datalist>
                 <ChevronDown size={16} className="pointer-events-none absolute right-3 text-slate-500 md:hidden" aria-hidden />          
             </label>
-            <label className="{`${field} md:border-1 md:border-slate-200 md:px-4`}">
+            <label className={`${field} md:border-1 md:border-slate-200 md:px-4`}>
                 <span className="sr-only">Category</span>
                 <select 
                 value={type}

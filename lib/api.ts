@@ -15,7 +15,7 @@ export type Facility = {
 
 export type FacilitiesResult = { facilities: Facility[]; error: boolean };
 
-export const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "http://localhost:5000/api/v1").replace(/\/$/, "");
+export const API_URL = (process.env.NEXT_PUBLIC_API_URL ?? "https://minzo-mvp-backend.onrender.com/api/v1").replace(/\/$/, "");
 
 type Raw = Record<string, unknown>;
 

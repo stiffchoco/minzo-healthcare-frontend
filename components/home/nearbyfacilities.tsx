@@ -1,9 +1,9 @@
 "use client"
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 import {Crosshair, MapPin} from "lucide-react";
-import FacilityCard from "./facilitycard";
+import FacilityCard from "@/components/home/facilitycard";
 import {getNearby, type Facility} from '@/lib/api';
 
 
