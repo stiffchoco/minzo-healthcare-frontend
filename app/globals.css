@@ -118,3 +118,6 @@ button[disabled] {
   background-color: #cccccc;
   color: #666666; */
 }
+.facility-text{
+  color :var(--foreground) !important;
+}
