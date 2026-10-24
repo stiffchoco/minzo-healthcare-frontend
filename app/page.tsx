@@ -1,5 +1,4 @@
 import Hero from "@/components/home/hero";
-import SearchBar from "@/components/layout/SearchBar"
 import CategoryGrid from "@/components/home/categorygrid";
 import TopRatedFacilities from "@/components/home/Topratedfacilities";
 import HowItWorks from "@/components/home/howitworks"; 
@@ -14,7 +13,6 @@ export default function HomePage(){
     <main className="min-h-screen bg-gray-50">
      
     <Hero />
-    <SearchBar />
     <CategoryGrid />
     <TopRatedFacilities />
     <NearbyFacilities />

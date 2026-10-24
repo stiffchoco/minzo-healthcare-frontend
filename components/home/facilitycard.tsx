@@ -14,6 +14,8 @@ import {
     Hospital,
 } from "lucide-react";
 import { Facility } from "@/lib/api";
+import { facilityImage } from "@/lib/facilityImages";
+import Image from "next/image";
 
 
 function iconFor(category: string): LucideIcon {
@@ -31,10 +33,20 @@ function iconFor(category: string): LucideIcon {
 export default function FacilityCard({facility }: {facility: Facility}) {
     const { id, name, category, area, rating, reviewCount, distanceKm, verified, image } = facility;
     const Icon = iconFor(category);
+    const src = facilityImage(category, id || name, image);
+    const rated = rating !== undefined && rating > 0;
 
     return(
         <article className="flex flex-col overflow-hidden rounded-2xl border border-slate-200 bg-white p-3 shadow-sm md:rounded-xl md:p-0 md:shadow-md">
 
+            <div className="relative h-24 w-full overflow-hidden rounded-xl bg-sky-100 md:h-32 md:rounded-none">
+
+            <Image src={src} alt={`${name} photo`}
+            fill 
+            sizes = "(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+            className="object-cover"/>
+            </div>
+{/* 
         {image ? (
             <img src={image} alt="" 
             className="h-24 w-full rounded-xl object-cover md:h-32 md:rounded-none"/>
@@ -43,13 +55,20 @@ export default function FacilityCard({facility }: {facility: Facility}) {
                         <Icon size={32} strokeWidth={1.5} aria-hidden />
                     
                     </div>
-                )}
+                )} */}
 
                 <div className="flex flex-1 flex-col md:p4 ">
                     <div className="mt-3 flex items-start jusitfy-between gap-2 md:mt-0">
                         <h3 className="text-sm font-bold text-slate-900 md:text-xs">{name}</h3>
-                        {rating !== undefined && (
+                        {/* {rating !== undefined && (
                             <span className="flex shrink-0 items-center 
+                            gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-800 md:hidden">
+                                <Star size= {12} aria-hidden/>{ rating.toFixed (1)}
+                            </span>
+                        )} */}
+
+                        {rated && (
+                             <span className="flex shrink-0 items-center 
                             gap-1 rounded-full bg-emerald-50 px-2 py-0.5 text-xs font-semibold text-emerald-800 md:hidden">
                                 <Star size= {12} aria-hidden/>{ rating.toFixed (1)}
                             </span>

@@ -6,10 +6,10 @@ export default function Hero(){
             <div className="mx-auto bg-[#0b4468] px-4 py-10 text-white md:relative
              md:max-w-7xl md:overflow-hidden
             md:rounded-3xl md:px-10 md:py-9">
-                <div className="absolute inset-0 hidden bg-[url('/images/hero.jpg')]
-                bg-cover bg-center md:block" 
+                <div className="absolute inset-0  bg-[url('/images/hero.jpg')]
+                bg-cover bg-center md:block " 
                 aria-hidden/>
-                <div aria-hidden className="absolute inset-0 hidden bg-[#0b4468]/55 md:block" />
+                <div aria-hidden className="absolute inset-0  bg-[#0b4468]/55 md:block" />
                 <div className="relative mx-auto max-w-6xl">
                     <p className="text-[11px] font-semibold uppercase tracking-wider text-sky-200 md:hidden
                     "> Healthcare directory in Liberia</p>
@@ -25,7 +25,7 @@ export default function Hero(){
                             Search for hospitals, clinics, pharmacies and more.
                         </p>
                         <p className="mt-5 text-log font-semibold">
-                            Read reviews. Mkae informed decisions.
+                            Read reviews. Make informed decisions.
                         </p>
                     </div>
                     <div className="mt-6 md:mt-8 md:max-w-5xl">

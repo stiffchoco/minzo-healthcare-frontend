@@ -12,7 +12,7 @@ export const categories =[
 ] as const;
 
 export const counties =[
-    "Boni",
+    "Bomi",
     "Bong",
     "Gbarpolu",
     "Grand Bassa",

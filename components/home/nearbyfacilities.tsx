@@ -7,7 +7,7 @@ import FacilityCard from "@/components/home/facilitycard";
 import {getNearby, type Facility} from '@/lib/api';
 
 
-type Status = "idle" | "locating" | "loading" | "denied" | "error";
+type Status = "idle" | "locating" | "loading" | "done" | "denied" | "error" ; 
 
 export default function NearbyFacilities(){
     const router = useRouter();
@@ -111,7 +111,7 @@ export default function NearbyFacilities(){
                 )}
              </div>
 
-             {status ==="done" && facilities.length > 0 &&(
+             {status === "done" && facilities.length > 0 &&(
                 <div className="mt-6">
                     <div className="flex items-end justify-between">
                         <h2 className="text-xl font-bold text-slate-900 md:text-sm">Facilities near you</h2>
