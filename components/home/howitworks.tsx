@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // const steps =[
 //     {
 //         title: "Search",
@@ -71,8 +70,6 @@
 //     )
 // }
 
-=======
->>>>>>> b37dfbe5be65fa676575eb4460bb57c5e80976e1
 
 const steps = [
   {
@@ -155,8 +152,4 @@ export default function HowItWorks() {
       </ol>
     </section>
   );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> b37dfbe5be65fa676575eb4460bb57c5e80976e1

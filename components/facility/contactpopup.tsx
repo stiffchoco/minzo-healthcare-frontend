@@ -149,8 +149,4 @@ export default function ContactPopup({ email, phone, website, open, onClose }: P
       </div>
     </dialog>
   );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> b37dfbe5be65fa676575eb4460bb57c5e80976e1

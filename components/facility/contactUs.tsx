@@ -1,11 +1,7 @@
 "use client";
 
 import { useState } from "react";
-<<<<<<< HEAD
 import ContactPopup from "./contactpopup";
-=======
-import ContactPopup from "@/components/facility/ContactPopup";
->>>>>>> b37dfbe5be65fa676575eb4460bb57c5e80976e1
 
 type Props = {
   email?: string | null;
@@ -36,8 +32,4 @@ export default function ContactUs({ email, phone, website, className }: Props) {
       <ContactPopup email={email} phone={phone} website={website} open={open} onClose={() => setOpen(false)} />
     </>
   );
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> b37dfbe5be65fa676575eb4460bb57c5e80976e1
