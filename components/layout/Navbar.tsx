@@ -21,7 +21,7 @@ export default function Navbar() {
   const isActive = (href: string) => (href === "/#categories" ? pathname === "/" : pathname.startsWith(href));
 
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white lg:border-0 lg:shadow-md">
+    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white lg:border-0 lg:shadow-md ">
       <nav className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6">
         <Link href="/" aria-label="Minzo Africa home" className="flex items-center">
           {/* Mobile / tablet mark */}
