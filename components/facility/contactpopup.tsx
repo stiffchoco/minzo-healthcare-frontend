@@ -19,18 +19,26 @@ const websiteLabel = (site: string) => site.replace(/^https?:\/\//i, "").replace
 
 async function copyText(text: string): Promise<boolean> {
   try {
-    await navigator.clipboard.writeText(text);
-    return true;
+    if(navigator.clipboard) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
   } catch {
     // Older browsers / non-secure pages
+  }
+
+  let area: HTMLTextAreaElement | null= null;
     try {
       const area = document.createElement("textarea");
       area.value = text;
       area.setAttribute("readonly", "");
       area.style.position = "fixed";
-      area.style.opacity = "0";
+      area.style.left = "-9999px";
+      area.style.top = "0";
+
       document.body.appendChild(area);
       area.select();
+
       const ok = document.execCommand("copy");
       document.body.removeChild(area);
       return ok;
@@ -38,7 +46,7 @@ async function copyText(text: string): Promise<boolean> {
       return false;
     }
   }
-}
+
 
 export default function ContactPopup({ email, phone, website, open, onClose }: Props) {
   const dialogRef = useRef<HTMLDialogElement>(null);

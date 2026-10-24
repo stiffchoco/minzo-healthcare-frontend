@@ -24,7 +24,7 @@ export default function ContactUs({ email, phone, website, className }: Props) {
         onClick={() => setOpen(true)}
         className={
           className ??
-          "block w-full rounded-xl bg-[#0b4468] py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#093652]"
+          "block w-full rounded-xl bg-[#0b4468] py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#093652] focus-visible::outline-none focus-visible::ring-2 focus-visible:ring-[#0b4468] focus-visible:ring-offset-2"
         }
       >
         Contact Us
