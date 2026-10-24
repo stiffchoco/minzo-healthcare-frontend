@@ -1,5 +1,4 @@
 import { Suspense } from "react";
-import type { Metadata } from "next";
 import SearchResults from "@/components/search/SearchResults";
 
 
