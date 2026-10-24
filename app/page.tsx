@@ -6,8 +6,6 @@ import NearbyFacilities from "@/components/home/nearbyfacilities";
 import CommunityCTA from "@/components/home/communitycta";
 
 
-
-
 export default function HomePage(){
   return (
     <main className="min-h-screen bg-gray-50">

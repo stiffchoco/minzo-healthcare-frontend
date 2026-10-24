@@ -3,8 +3,8 @@ import Link from "next/link";
 
 const mobileLinks = [
   { href: "/login", label: "Log in" },
-  { href: "/login?tab=signup", label: "Create account" },
-  { href: "/login?tab=signup&type=business", label: "List a facility" },
+  { href: "/register", label: "Create account" },
+  { href: "/register&mode=business", label: "List a facility" },
 ];
 
 const desktopLinks = [
