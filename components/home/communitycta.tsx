@@ -37,7 +37,11 @@ export default function CommunityCTA() {
         {/* Background image */}
         <div
           aria-hidden="true"
+<<<<<<< HEAD
           className="absolute inset-0 -z-20  bg-[url('/images/cta-bg.jpg')] bg-cover bg-center blur-[3px] md:block"
+=======
+          className="absolute inset-0 -z-20 hidden bg-[url('/images/cta-bg.jpg')] bg-cover bg-center blur-[3px] md:block"
+>>>>>>> b37dfbe5be65fa676575eb4460bb57c5e80976e1
         />
 
         {/* Overlay for text readability */}

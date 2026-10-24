@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // import Link from "next/link";
 // import {
 //     Building2,
@@ -86,6 +87,8 @@
 //     )
 // }
 
+=======
+>>>>>>> b37dfbe5be65fa676575eb4460bb57c5e80976e1
 
 import Link from "next/link";
 import {
@@ -194,4 +197,8 @@ export default function CategoryGrid() {
       </ul>
     </section>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> b37dfbe5be65fa676575eb4460bb57c5e80976e1
