@@ -5,6 +5,8 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { deleteCookie, getCookie } from 'cookies-next';
+
 
 const navLinks = [
   { href: "/#categories", label: "Browse Category" },
@@ -67,15 +69,34 @@ export default function Navbar() {
           <Link href="/about" className="text-sm font-bold text-slate-900 hover:text-[#0b4468]">
             About
           </Link>
+          {!getCookie('minzo_token') ? (
+            <>
           <Link href="/login" className="text-sm font-semibold text-slate-900 hover:text-[#0b4468]">
             Login
           </Link>
           <Link
-            href="/login?tab=signup"
+            style={{color: 'white'}}
+            href="/register"
             className="rounded-full bg-[#0b4468] px-6 py-2.5 text-sm font-semibold text-white hover:bg-[#093652]"
           >
             Sign up
           </Link>
+          </>
+          ) : (
+          <div>
+            <button
+              onClick={() => {
+                // setOpen(false)
+                deleteCookie('minzo_token')
+                window.location.href = '/login';
+              }}
+              style={{color: 'white'}}
+              className="mt-4 block px-4  rounded-full bg-[#0b4468] py-2.5 text-center text-sm font-semibold text-white"
+            >
+              Logout
+            </button>
+          </div>
+          )}
         </div>
 
         {/* Mobile toggle */}
@@ -102,7 +123,8 @@ export default function Navbar() {
               {l.label}
             </Link>
           ))}
-          <div className="mt-2 flex gap-2">
+          {!getCookie('minzo_token') ? (
+            <div className="mt-2 flex gap-2">
             <Link
               href="/login"
               onClick={() => setOpen(false)}
@@ -111,13 +133,29 @@ export default function Navbar() {
               Login
             </Link>
             <Link
-              href="/login?tab=signup"
+              href="/register"
               onClick={() => setOpen(false)}
+              style={{color: 'white'}}
               className="flex-1 rounded-full bg-[#0b4468] py-2.5 text-center text-sm font-semibold text-white"
             >
               Sign up
             </Link>
           </div>
+          ) : (
+          <div>
+            <button
+              onClick={() => {
+                // setOpen(false)
+                deleteCookie('minzo_token')
+                window.location.href = '/login';
+              }}
+              style={{color: 'white'}}
+              className="mt-4 block px-4  rounded-full bg-[#0b4468] py-2.5 text-center text-sm font-semibold text-white"
+            >
+              Logout
+            </button>
+          </div>
+          )}
         </div>
       )}
     </header>
